@@ -1,0 +1,23 @@
+{% extends "layout/application.html" %}
+
+{% block title %}My addressbook{% endblock %}
+{% block content %}
+	<table cellspacing="0" cellpadding="0">
+		<tr>
+			<th>First name</th>
+			<th>Pwd hash</th>
+			<th>Notes</th>
+		</tr>
+		{% if persons %}
+			{% for person in persons %}
+				<tr>
+					<td>{{person.name}}</td>
+					<td>{{person.pwd_hash}}</td>
+					<td>{{person.notes}}</td>
+				</tr>
+			{% endfor %}
+		{% endif %}				
+	</table>
+	<br />
+	Number of users: {{count}}
+{% endblock %}

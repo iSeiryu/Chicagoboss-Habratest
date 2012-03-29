@@ -1,0 +1,68 @@
+{% extends "layout/application.html" %}
+
+{% block title %}ErlChat{% endblock %}
+{% block res %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/chat.js"></script>
+    <script src="/static/js/mustache.js"></script>
+    <script>
+      $(document).ready(function() {
+        Chat.buildChatWindow({
+          chatElements: "#chat-container, #logout-button",
+          messageContainer: "#message-container",
+          userContainer: "#user-container",
+          loginButton: "#login-button",
+          logoutButton: "#logout-button",
+          loginElements: "#login-container",
+          loginErrors: "#login-errors",
+          usernameField: "#nickname",
+          usernameDisplay: "#current-username",
+          sendMessageButton: "#send-button",
+          composeMessageField: "#message",
+          chatErrors: "#chat-errors"
+        });
+
+        $("#nickname").focus();
+      });
+    </script>
+{% endblock %}
+
+{% block content %}
+ <div id="header">
+   <h1>Public chat</h1>
+   <a id="logout-button" href="#" style="display: none;">leave chat</a>
+ </div>
+ <div id="content">
+   <div id="login-container">
+     <label id="whoareyou" for="nickname">Who are you?</label>
+     <input id="nickname" type="text"></input>
+     <input id="login-button" type="submit" name="join" value="join"
+         disabled="disabled" />
+     <span id="login-errors" class="errors" style="display: none;"></span>
+   </div>
+
+   <div id="chat-container" style="display: none;">
+	  <div class="message-container">
+		  <ul id="message-container">
+	     </ul>
+	     <div id="footer">
+	       <div id="input-container">
+	         <div id="send-form">
+	           <label id="current-username" for="message">anonymous:</label>
+	           <textarea id="message" maxlength="300"></textarea>
+	           <input id="send-button" type="submit" name="send" value="send"
+	               disabled="disabled" />
+	           <span id="chat-errors" class="errors" style="display: none;"></span>
+	         </div>
+	       </div>
+	     </div>
+	  </div>
+
+	  <div class="user-container">
+		  <div class="user-header">User list</div>
+		  <ul id="user-container">
+	     </ul>
+	  </div>
+
+   </div>
+{% endblock %}

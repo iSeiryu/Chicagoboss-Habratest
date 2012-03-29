@@ -1,0 +1,2 @@
+-module(message, [Id, Text, Nickname, MessageTime]).
+-compile(export_all).

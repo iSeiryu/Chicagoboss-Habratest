@@ -1,0 +1,40 @@
+{% extends "layout/application.html" %}
+
+{% block title %}My addressbook{% endblock %}
+{% block content %}
+
+	<table cellspacing="0" cellpadding="0">
+		<tr>
+			<th>First name</th>
+			<th>Last name</th>
+			<th>City</th>
+			<th>Address1</th>
+			<th>Address2</th>
+			<th>State</th>
+			<th>Country</th>
+			<th>Active</th>
+			<th>Actions</th>
+		</tr>
+		{% if addresses %}
+			{% for address in addresses %}
+				<tr>
+					<td>{{address.firstname}}</td>
+					<td>{{address.lastname}}</td>
+					<td>{{address.city}}</td>
+					<td>{{address.address1}}</td>
+					<td>{{address.address2}}</td>
+					<td>{{address.state}}</td>
+					<td>{{address.country}}</td>
+					<td>{{address.active}}</td>
+					<td align="center">
+						<a href="/main/show/{{address.id}}"> <img src="/static/images/lupa.gif" alt="show" title="show" width="16"/></a>
+						<a href="/main/edit/{{address.id}}"> <img src="/static/images/edit.png" alt="edit" title="edit"/></a>
+						<a href="/main/delete/{{address.id}}"> <img src="/static/images/delete.png" alt="delete" title="delete"/></a></td>
+				</tr>
+			{% endfor %}
+		{% endif %}
+	</table>
+	<br />
+	Number of adresses: {{count}}
+
+{% endblock %}

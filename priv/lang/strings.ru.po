@@ -1,0 +1,10 @@
+
+msgid ""
+"Please enter a name"
+msgstr ""
+"Пожалуйста, введите имя"
+
+msgid ""
+"Please enter a password"
+msgstr ""
+"Пожалуйста, введите пароль"

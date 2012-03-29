@@ -1,0 +1,19 @@
+{% extends "layout/application.html" %}
+
+{% block title %}My addressbook{% endblock %}
+{% block content %}
+	<table cellspacing="0" cellpadding="0">
+	{% if address %}
+		<tr><td>First name</td><td>{{address.firstname}}</td></tr><tr>
+			<td>Last name</td><td>{{address.lastname}}</td></tr><tr>
+			<td>City</td><td>{{address.city}}</td></tr><tr>
+			<td>Address1</td><td>{{address.address1}}</td></tr><tr>
+			<td>Address2</td><td>{{address.address2}}</td></tr><tr>
+			<td>State</td><td>{{address.state}}</td></tr><tr>
+			<td>Country</td><td>{{address.country}}</td></tr><tr>
+			<td>Modification time</td><td>{{address.modification_time}}</td></tr><tr>
+			<td>Creation time</td><td>{{address.creation_time}}</td></tr><tr>
+			<td>Active</td><td>{{address.active}}</td></tr>
+	{% endif %}
+	</table>
+{% endblock %}

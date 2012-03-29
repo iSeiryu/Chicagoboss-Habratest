@@ -1,0 +1,21 @@
+% Routes file.
+
+% Formats: 
+{"/create", [{controller, "main"}, {action, "create"}]}.
+{404, [{controller, "main"}, {action, "oops"}]}.
+%     {"/some/route", [{controller, "Controller"}, {action, "Action"}, {id, "42"}]}.
+%     {"/some/route", [{application, some_app}, {controller, "Controller"}, {action, "Action"}, {id, "42"}]}.
+%     {404, [{controller, "Controller"}, {action, "Action"}]}.
+%     {404, [{controller, "Controller"}, {action, "Action"}, {id, "42"}]}.
+%     {404, [{application, some_app}, {controller, "Controller"}, {action, "Action"}, {id, "42"}]}.
+%
+% Note that routing across applications results in a 302 redirect.
+
+% Front page
+{"/", [{controller, "main"}, {action, "index"}]}.
+
+% 404 File Not Found handler
+% {404, [{controller, "world"}, {action, "lost"}]}.
+
+% 500 Internal Error handler (only invoked in production)
+% {500, [{controller, "world"}, {action, "calamity"}]}.

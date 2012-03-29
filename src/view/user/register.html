@@ -1,0 +1,25 @@
+{% extends "layout/application.html" %}
+
+{% block title %}Registration{% endblock %}
+{% block content %}
+	{% if errors %}
+		<ol>
+		{% for error in errors %}
+			<li><font color=red>{{ error }}</font>
+		{% endfor %}
+		</ol>
+	{% endif %}
+
+	<form method="post">
+		Name:<br />
+		<input name="name" value="{{ person.name|default_if_none:"" }}" /><br />
+		Password:<br />
+		<input name="password" type="password" value="{{ person.password|default_if_none:"" }}" /><br /><br />
+
+
+		Notes<br />
+		<textarea name="notes">{{ person.notes|default_if_none:"" }}</textarea><br /><br />
+
+		<input type="submit" value="Submit" />
+	</form>
+{% endblock %}

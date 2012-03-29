@@ -1,0 +1,20 @@
+{% extends "layout/application.html" %}
+
+{% block title %}My addressbook{% endblock %}
+{% block content %}
+	<form method="post">
+		<table cellspacing="0" cellpadding="0">
+		{% if address %}
+			<tr><td>First name</td><td><input type="text" id="firstname" name="firstname" size="45" maxlength="255" value="{{address.firstname}}" /></td></tr><tr>
+				<td>Last name</td><td><input type="text" id="lastname" name="lastname" size="45" maxlength="255" value="{{address.lastname}}" /></td></tr><tr>
+				<td>City</td><td><input type="text" id="city" name="city" size="45" maxlength="255" value="{{address.city}}" /></td></tr><tr>
+				<td>Address1</td><td><input type="text" id="address1" name="address1" size="45" maxlength="255" value="{{address.address1}}" /></td></tr><tr>
+				<td>Address2</td><td><input type="text" id="address2" name="address2" size="45" maxlength="255" value="{{address.address2}}" /></td></tr><tr>
+				<td>State</td><td><input type="text" id="state" name="state" size="45" maxlength="255" value="{{address.state}}" /></td></tr><tr>
+				<td>Country</td><td><input type="text" id="country" name="country" size="45" maxlength="255" value="{{address.country}}" /></td></tr><tr>
+				<td>Active</td><td><input type="checkbox" id="active" name="active" value="{{address.active}}" /></td></tr>
+		{% endif %}
+		</table>
+		<button type="submit">Submit</button>
+	</form>
+{% endblock %}

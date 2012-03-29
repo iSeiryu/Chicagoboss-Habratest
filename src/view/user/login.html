@@ -1,0 +1,26 @@
+{% extends "layout/application.html" %}
+
+{% block title %}Log in{% endblock %}
+{% block content %}
+
+	{% if error %}
+		<font color="red">{{ error }}</font>
+	{% endif %}
+	<form method="post">
+		Name:<br />
+		<input name="name" /><br /><br />
+
+		Password:<br />
+		<input name="password" type="password" /><br /><br />
+
+		<input type="submit" value="Log in" />
+		<input type="hidden" name="redirect" value="{{ redirect|default_if_none:"/" }}" />
+		<a href="/user/register">Register</a>
+
+		{% if persons %}
+					
+			{{persons}}	
+	
+		{% endif %}		
+	</form>
+{% endblock %}

@@ -1,0 +1,2 @@
+-module(userlist, [Id, Name]).
+-compile(export_all).
